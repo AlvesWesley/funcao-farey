@@ -13,19 +13,19 @@ function adicionarNivel(lista, n) {
   var novaLista = [];
 
   /**
-   * 4 - Raliza um laço de repetição em cada item (item: [a, b]) do array principal para calcular
+   * 4 - Raliza um laço de repetição nos itens (item: [a, b]) do array principal para calcular
    * a soma da fração na posição i mais a fração na posição i + 1 (fração seguinte).
    */
   for (var i = 0; i < lista.length - 1; i++) {
     novaLista.push(lista[i]);
 
     var a = lista[i][0]; // Numerador da fração i
-    var b = lista[i + 1][0]; // Denominador da fração i
-    var c = lista[i][1]; // Numerador da fração i + 1
+    var b = lista[i + 1][0]; // Numerador da fração i + 1
+    var c = lista[i][1]; // Denominador da fração i
     var d = lista[i + 1][1]; // Denominador da fração i + 1
 
     /**
-     * 5 - Adiciona a soma somente de c + d for menor que n
+     * 5 - Adiciona a soma na lista somente de c + d for menor que n
      */
     if (c + d <= n) {
       var soma = [a + b, c + d];
@@ -34,7 +34,7 @@ function adicionarNivel(lista, n) {
   }
 
   /**
-   * 6 - O laço de repetição anterior não inclui a última função no array,
+   * 6 - O laço de repetição anterior não inclui a última fração no array,
    * por isso ela é incluída neste momento
    */
   novaLista.push(lista[lista.length - 1]);
@@ -75,7 +75,7 @@ function iniciarAlgoritmo(n, primeiroNivel) {
   var saida = formatarParaFracao(lista);
 
   /**
-   * 8 - FIM - Exibe o resultado no terminal
+   * 8 - Exibe o resultado no terminal - FIM
    */
   console.log(saida);
 }
